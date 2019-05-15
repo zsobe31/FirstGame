@@ -77,6 +77,11 @@ public class GameView extends View {
             // tobb kor rajzolasa, megmaradnak az elozoleg erintett korok
             circles.add(new PointF(event.getX(), event.getY()));
 
+            // feltetel vizsgalata, 5 kor utan
+            if (circles.size() == 5) {
+                ((MainActivity)getContext()).changeText("Elérted az 5 kört!");
+            }
+
             // a terulet ujrarajzolasa
             invalidate();
         }
